@@ -9,7 +9,7 @@ import (
 )
 
 const (
-	address     = "localhost:50051" //client is connecting with server1
+	address     = "localhost:50051" //client is connecting with server
 	defaultName = "list"
 )
 
@@ -23,7 +23,7 @@ func Hi(client pb.ListClient, in *pb.HelloRequest) {
 }
 func main() {
 	// Setup connection to the gRPC server
-	conn, err := grpc.Dial(address, grpc.WithInsecure()) //To connect with server1
+	conn, err := grpc.Dial(address, grpc.WithInsecure()) //To connect with server
 	if err != nil {
 		log.Fatalf("Didn't connect %v", err)
 	}
