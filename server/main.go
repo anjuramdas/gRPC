@@ -3,7 +3,6 @@ package main
 import (
 	"log"
 	"net"
-
 	pb "github.com/anjuramdas/gRPC_code/list"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
@@ -32,7 +31,6 @@ func main() {
 	l := List{}
 	l.id = 1
 	l.address = "localhost:50051"
-	l.replicas = append(l.replicas, "localhost:50051", "localhost:50052", "localhost:50053", "localhost:50050")
 	s := grpc.NewServer()
 	pb.RegisterListServer(s, &l)
 	s.Serve(lis)
