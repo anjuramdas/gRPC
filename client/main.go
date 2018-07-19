@@ -2,7 +2,6 @@ package main
 
 import (
 	"log"
-
 	pb "github.com/anjuramdas/gRPC_code/list"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
@@ -27,7 +26,7 @@ func main() {
 	if err != nil {
 		log.Fatalf("Didn't connect %v", err)
 	}
-	defer conn.Close() //the defer call to properly close the connection when the function returns
+	defer conn.Close() //The defer call will properly close the connection when the function returns
 	client := pb.NewListClient(conn)
 	in := &pb.HelloRequest{Request: "Hi"}
 	Hi(client, in)
